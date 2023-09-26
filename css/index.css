@@ -1,0 +1,71 @@
+body {
+    background: linear-gradient(to left top, #9a41c4, #c57213) fixed;
+}
+
+div.task{
+    font-size: 20px;
+    letter-spacing: 0px;
+    word-spacing: 2px;
+    color: white;
+    font-weight: 700;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+.field{
+    background-color: rgb(26, 72, 95);
+    color: white;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: 700;
+    margin: 15px;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    line-height: 10em; 
+    text-align: center; 
+}  
+
+#form {
+    width: 400px;
+    padding: 10px;
+    font-size: 18px;
+    outline:none;
+    background: linear-gradient(to left top, #1ea780, #1e1f60) fixed;
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.8);
+    transition: all 0.5s;
+}
+  
+#form:hover {
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+#form:focus {
+    border: 2px solid rgba(255,255,255,0.5);
+    background: linear-gradient(to left top, #b23b3b, #aad314) fixed;
+}
+  
+#button {
+    width: 425px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight:bold;
+    outline:none;
+    background: linear-gradient(to left top, #1ea780, #1e1f60) fixed;
+    border-radius: 10px;
+    border: 5px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.8);
+    transition: all 0.5s;
+}
+  
+#button:hover {
+    border: 5px solid rgba(255,255,255,0.5);
+    background: linear-gradient(to left top, #8a8411, #404186) fixed;
+}
+  
+#button:focus {
+    background: linear-gradient(to left top, #b23b3b, #aad314) fixed;
+}
