@@ -99,3 +99,50 @@ function inp() {
     kru2.innerHTML = finalAnswer;
     console.log(finalAnswer);
 }
+
+const digits = [9, 3, 1, 6];
+
+function findLatestTime(digits) {
+    let latestTime = '';
+    
+    // Проверка и добавление возможного значения часов (для разрядов 0-2)
+        if (digits.includes(2)) {
+            latestTime += '2';
+            digits.splice(digits.indexOf(2), 1);
+    
+            if (digits.some(digit => digit <= 3)) {
+                latestTime += Math.max(...digits.filter(digit => digit <= 3));
+                digits.splice(digits.indexOf(parseInt(latestTime[1])), 1);
+    
+                latestTime += ':';
+            } else {
+                latestTime = '';
+            }
+        } else if (digits.includes(1) || digits.includes(0)) {
+            latestTime += Math.max(...digits.filter(digit => digit <= 1));
+            digits.splice(digits.indexOf(parseInt(latestTime[0])), 1);
+    
+            latestTime += Math.max(...digits);
+            digits.splice(digits.indexOf(parseInt(latestTime[1])), 1);
+    
+            latestTime += ':';
+        } else {
+            return 'Невозможно составить время из заданных цифр';
+        }
+    
+    // Проверка и добавление возможного значения минут (для разрядов 0-5)
+        if (digits.some(digit => digit <= 5)) {
+            latestTime += Math.max(...digits.filter(digit => digit <= 5));
+            digits.splice(digits.indexOf(parseInt(latestTime[3])), 1);
+    
+            latestTime += Math.max(...digits);
+            digits.splice(digits.indexOf(parseInt(latestTime[4])), 1);
+        } else {
+            return 'Невозможно составить время из заданных цифр';
+        }
+    
+        return latestTime;
+    }
+
+    const result = findLatestTime(digits);
+    console.log(result); // Выводит "21:49"
