@@ -15,3 +15,13 @@ function timeToMinute(time){
     }
 }
 console.log(timeToMinute("02:10"));
+
+function outDayOfWeek(){
+    let mounth = prompt("Введите номер месяца (1..12)") - 1;
+    let day = prompt("Введите число месяца (1..31)");
+    let days = ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"];
+    let year = new Date().getFullYear();
+    let dayOfWeek = new Date(year, mounth, day).getDay();
+    alert(days[dayOfWeek]);
+}
+outDayOfWeek();
